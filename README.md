@@ -1,0 +1,1 @@
+# tf-multi-region-alias-module-aws

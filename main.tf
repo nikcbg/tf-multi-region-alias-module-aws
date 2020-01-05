@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 # Module configuration for 2 allied providers in 2 different regions
-module "EC2-module-for-alias" {
+module "multi-region-alias" {
   source  = "./module"
   providers = {
     aws.east-r = aws.east1

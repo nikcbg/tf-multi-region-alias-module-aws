@@ -14,7 +14,7 @@ provider "aws" {
 
 # Module configuration for 2 allied providers in 2 different regions
 module "EC2-module-for-alias" {
-  source  = "app.terraform.io/tforg123/EC2-module-for-alias/aws"
+  source  = "your_module_source_here"
   version = "1.0.0"
   providers = {
     aws.east-r = aws.east1

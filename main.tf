@@ -1,30 +1,23 @@
-# module code for Terraform Private module registry
+# code that calls module from  Terraform Private module registry
 
-
+# Allied provider configuration for US east-1 region
 provider "aws" {
-  alias = "east-r"
+  alias = "east1"
+  region = "us-east-1"
 }
 
+# Allied provider configuration for US west-2 region
 provider "aws" {
-  alias = "west-r"
+  alias  = "west2"
+  region = "us-west-2"
 }
 
-resource "aws_instance" "east" {
-  provider      = aws.east-r
-  ami           = "ami-04b9e92b5572fa0d1"
-  instance_type = "t2.micro"
-
-  tags = {
-    Name = "some-name"
+# Module configuration for 2 allied providers in 2 different regions
+module "EC2-module-for-alias" {
+  source  = "app.terraform.io/tforg123/EC2-module-for-alias/aws"
+  version = "1.0.0"
+  providers = {
+    aws.east-r = aws.east1
+    aws.west-r = aws.west2
   }
 }
-
-resource "aws_instance" "west" {
-  provider      = aws.west-r
-  ami           = "ami-06d51e91cea0dac8d"
-  instance_type = "t2.micro"
-
-  tags = {
-    Name  = "some-name"
-  }
-} 

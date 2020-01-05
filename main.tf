@@ -14,7 +14,7 @@ provider "aws" {
 
 # Module configuration for 2 allied providers in 2 different regions
 module "EC2-module-for-alias" {
-  source  = "your_module_source_here"
+  source  = "./module"
   version = "1.0.0"
   providers = {
     aws.east-r = aws.east1

@@ -1,4 +1,4 @@
-# code that calls module from  Terraform Private module registry
+# code that calls module and creates two EC2 instrances in two different regions. 
 
 # Allied provider configuration for US east-1 region
 provider "aws" {

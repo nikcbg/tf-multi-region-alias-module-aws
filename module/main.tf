@@ -1,4 +1,4 @@
-# module code for Terraform Private module registry
+# module code for creating two EC2 instances
 
 provider "aws" {
   alias = "east-r"
